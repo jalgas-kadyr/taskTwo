@@ -1,0 +1,5 @@
+select *, count(*) as direct_subordinates
+from employee
+group by manager_id
+having count(manager_id) > 1
+limit 1

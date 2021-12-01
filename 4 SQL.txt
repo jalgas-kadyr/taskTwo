@@ -1,0 +1,8 @@
+SELECT department."DEPARTMENT_NAME
+", COUNT(employee."EMPLOYEE_ID
+") as count FROM department, employee
+WHERE department."DEPARTMENT_ID
+"=employee."DEPARTMENT_ID
+"
+group BY department."DEPARTMENT_ID
+"
