@@ -1,10 +1,8 @@
-SELECT a."FIRST_NAME
-" AS 'EMPLOYEE_FIRST_NAME', a.LAST_NAME AS 'EMPLOYEE_LAST_NAME', b."FIRST_NAME
-" AS 'MANAGER_FIRST_NAME', b.LAST_NAME AS 'MANAGER_LAST_NAME'
-FROM employee a 
-LEFT JOIN employee b
-ON a.MANAGER_ID=b."EMPLOYEE_ID
-"
-WHERE MANAGER_LAST_NAME NOT NULL
--- Соеденил таблице employee с самим собой с помощью LEFT JOIN 
--- Не понял почему a."FIRST_NAME" и b."EMPLOYEE_ID" пишутся не как обычно но работает)
+select e."FIRST_NAME
+" as employee_name, e.LAST_NAME as employee_surname, 
+m."FIRST_NAME
+" as manager_name, m.LAST_NAME as manager_surname
+from employee as e
+join employee as m
+on e."EMPLOYEE_ID
+" = m.MANAGER_ID

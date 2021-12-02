@@ -1,0 +1,10 @@
+select employee."FIRST_NAME
+", employee.LAST_NAME, d."DEPARTMENT_NAME
+", jb.DEPARTMENT_ID
+from employee
+left join job_history as jb
+on employee."EMPLOYEE_ID
+" = jb.EMPLOYEE_ID
+join department as d
+on jb.DEPARTMENT_ID = d."DEPARTMENT_ID
+"

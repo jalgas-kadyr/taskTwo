@@ -1,8 +1,10 @@
-SELECT * FROM (SELECT department."DEPARTMENT_NAME
+SELECT department."DEPARTMENT_NAME
 ", COUNT(employee."EMPLOYEE_ID
-") as count FROM department, employee
-WHERE department."DEPARTMENT_ID
-"=employee."DEPARTMENT_ID
+") as COUNT FROM department
+INNER JOIN employee on employee."DEPARTMENT_ID
+" = department."DEPARTMENT_ID
 "
-group BY department."DEPARTMENT_ID
-") where count > 10
+GROUP BY department."DEPARTMENT_NAME
+"
+HAVING COUNT(employee."EMPLOYEE_ID
+") > 10

@@ -1,8 +1,8 @@
 SELECT department."DEPARTMENT_NAME
 ", COUNT(employee."EMPLOYEE_ID
-") as count FROM department, employee
-WHERE department."DEPARTMENT_ID
-"=employee."DEPARTMENT_ID
+") FROM department
+INNER JOIN employee on employee."DEPARTMENT_ID
+" = department."DEPARTMENT_ID
 "
-group BY department."DEPARTMENT_ID
+GROUP BY department."DEPARTMENT_NAME
 "
