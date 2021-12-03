@@ -2,4 +2,4 @@ SELECT employee."FIRST_NAME
 " as first_name, employee.LAST_NAME as last_name, employee.SALARY as salary
 FROM employee
 GROUP BY salary
-HAVING SALARY > (SELECT AVG(SALARY) FROM employee)
+HAVING SALARY > AVG(SALARY)
